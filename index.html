@@ -44,7 +44,7 @@
                   <input
                     type="text"
                     class="form-control"
-                    id=""
+                    id="income"
                     placeholder="Your monthly income"
                   />
                 </div>
@@ -56,7 +56,7 @@
                   <input
                     type="text"
                     class="form-control"
-                    id=""
+                    id="food"
                     placeholder="How much do you spent on food?"
                   />
                 </div>
@@ -67,7 +67,7 @@
                   <input
                     type="text"
                     class="form-control"
-                    id=""
+                    id="rent"
                     placeholder="House rent cost?"
                   />
                 </div>
@@ -78,14 +78,18 @@
                   <input
                     type="text"
                     class="form-control"
-                    id=""
+                    id="cloths"
                     placeholder="How much your dresses cost?"
                   />
                 </div>
               </div>
               <!-- clculate button -->
               <div class="text-center">
-                <button type="submit" class="btn btn-primary px-5">
+                <button
+                  onclick="calculateExpenses()"
+                  type="button"
+                  class="btn btn-primary px-5"
+                >
                   Calculate
                 </button>
               </div>
@@ -106,15 +110,20 @@
                 <input
                   type="text"
                   class="form-control"
-                  id=""
+                  id="save-percentage-amount"
                   placeholder="How much you want to save?"
                 />
                 <p class="px-4 col-form-label">%</p>
-                <button type="submit" class="btn btn-primary col-sm-4">
+                <!-- button -->
+                <button
+                  type="button"
+                  class="btn btn-primary col-sm-4"
+                  onclick="calculateSave()"
+                >
                   Calculate
                 </button>
               </div>
-              <!-- calculated expenses -->
+              <!-- calculated save -->
               <div class="py-4 text-center">
                 <h5>Saved Amount: <span id="saved-amount"> 0 </span></h5>
                 <h5>
