@@ -31,36 +31,56 @@
       <div class="container">
         <div class="row justify-content-center">
           <!-- leftside image -->
-          <div class="col-lg-6 col-sm-10 d-flex align-items-center">
-            <img class="img-fluid" src="./images/expenses.jpg" alt="" />
+          <div class="left-img col-lg-6 col-sm-10 d-flex align-items-center">
+            <img class="img-fluid p-5" src="./images/expenses.png" alt="" />
           </div>
           <!-- rightside form -->
-          <div class="col-lg-6 col-sm-10 gy-5 px-5">
+          <div class="right-form col-lg-6 col-sm-10 g-sm-5 g-lg-0 p-5">
             <form>
-              <h4 class="text-center">Income</h4>
+              <h4 class="text-center">Initial Balance</h4>
               <div class="row mb-3">
                 <label class="col-sm-2 col-form-label">Income:</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id=""
+                    placeholder="Your monthly income"
+                  />
                 </div>
               </div>
               <h4 class="text-center">Expenses</h4>
               <div class="row mb-3">
                 <label class="col-sm-2 col-form-label">Food:</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id=""
+                    placeholder="How much do you spent on food?"
+                  />
                 </div>
               </div>
               <div class="row mb-3">
                 <label class="col-sm-2 col-form-label">Rent:</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id=""
+                    placeholder="House rent cost?"
+                  />
                 </div>
               </div>
               <div class="row mb-3">
                 <label class="col-sm-2 col-form-label">Cloths:</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id=""
+                    placeholder="How much your dresses cost?"
+                  />
                 </div>
               </div>
               <!-- clculate button -->
@@ -72,6 +92,7 @@
             </form>
             <!-- calculated expenses -->
             <div class="py-4 text-center">
+              <h5>Monthly Balance: <span id="monthly-balance"> 0 </span></h5>
               <h5>Your Total Expenses: <span id="total-expenses"> 0 </span></h5>
               <h5>
                 Remaining Balance: <span id="remaining-balance"> 0 </span>
@@ -82,7 +103,12 @@
             <div class="row py-5">
               <label class="col-sm-2 col-form-label">Save:</label>
               <div class="col-sm-10 d-flex">
-                <input type="text" class="form-control" id="" />
+                <input
+                  type="text"
+                  class="form-control"
+                  id=""
+                  placeholder="How much you want to save?"
+                />
                 <p class="px-4 col-form-label">%</p>
                 <button type="submit" class="btn btn-primary col-sm-4">
                   Calculate
