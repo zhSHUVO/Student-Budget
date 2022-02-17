@@ -11,30 +11,38 @@ let saveTarget
 // expenses & remaining calculation
 function calculateExpenses() {
     // taking user input value
-    totalIncome = parseFloat(document.getElementById("income").value);
-    foodCost = parseFloat(document.getElementById("food").value);
-    rentCost = parseFloat(document.getElementById("rent").value);
-    clothsCost = parseFloat(document.getElementById("cloths").value);
+    totalIncome = document.getElementById("income").value;
+    foodCost = document.getElementById("food").value;
+    rentCost = document.getElementById("rent").value;
+    clothsCost = document.getElementById("cloths").value;
 
     if (isNaN(totalIncome) || isNaN(foodCost) || isNaN(rentCost) || isNaN(clothsCost) || totalIncome < 0 || foodCost < 0 || rentCost < 0 || clothsCost < 0) {
+
+        // error messages
         document.getElementById("income").classList.add("border", "border-danger");
         document.getElementById("food").classList.add("border", "border-danger");
         document.getElementById("rent").classList.add("border", "border-danger");
         document.getElementById("cloths").classList.add("border", "border-danger");
         document.getElementById("expense-validation-check").style.display = "block";
+
+        // cleaning the outputs
+        document.getElementById("monthly-balance").innerHTML = " 0 ";
+        document.getElementById("total-expenses").innerHTML = " 0 ";
+        document.getElementById("remaining-balance").innerHTML = " 0 ";
+
     }
 
     else {
         // calculating  expenses and remaining
-        let totalExpenses = foodCost + rentCost + clothsCost;
-        remainingBalance = totalIncome - totalExpenses;
+        let totalExpenses = parseFloat(foodCost) + parseFloat(rentCost) + parseFloat(clothsCost);
+        remainingBalance = parseFloat(totalIncome) - parseFloat(totalExpenses);
 
         // removing error messages
         document.getElementById("income").classList.remove("border", "border-danger");
         document.getElementById("food").classList.remove("border", "border-danger");
         document.getElementById("rent").classList.remove("border", "border-danger");
         document.getElementById("cloths").classList.remove("border", "border-danger");
-        document.getElementById("validation-check").style.display = "none";
+        document.getElementById("expense-validation-check").style.display = "none";
 
         // showing the results to the user
         document.getElementById("monthly-balance").innerHTML = totalIncome;
@@ -43,19 +51,26 @@ function calculateExpenses() {
     }
 }
 
+//save
 function calculateSave() {
     // taking user input value
     saveTarget = document.getElementById("save-target-amount").value;
 
     if (isNaN(saveTarget) || saveTarget < 0) {
+
+        // error messages
         document.getElementById("save-target-amount").classList.add("border", "border-danger");
         document.getElementById("save-validation-check").style.display = "block";
+
+        // cleaning the outputs
+        document.getElementById("saved-amount").innerHTML = " 0 ";
+        document.getElementById("after-save-balance").innerHTML = " 0 ";
     }
 
     else {
         // calculating save and remainig 
-        let savedAmount = totalIncome * saveTarget / 100;
-        let afterSave = remainingBalance - savedAmount;
+        let savedAmount = parseFloat(totalIncome) * parseFloat(saveTarget) / 100;
+        let afterSave = parseFloat(remainingBalance) - parseFloat(savedAmount);
 
         // removing error messages
         document.getElementById("save-target-amount").classList.remove("border", "border-danger");
