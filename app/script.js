@@ -6,6 +6,7 @@ let clothsCost;
 let remainingBalance;
 let saveTarget
 
+let letters = /[A-Za-z]/g;
 
 
 // expenses & remaining calculation
@@ -16,7 +17,7 @@ function calculateExpenses() {
     rentCost = document.getElementById("rent").value;
     clothsCost = document.getElementById("cloths").value;
 
-    if (isNaN(totalIncome) || isNaN(foodCost) || isNaN(rentCost) || isNaN(clothsCost) || totalIncome < 0 || foodCost < 0 || rentCost < 0 || clothsCost < 0) {
+    if (totalIncome.match(letters) || foodCost.match(letters) || rentCost.match(letters) || clothsCost.match(letters) || totalIncome < 0 || foodCost < 0 || rentCost < 0 || clothsCost < 0) {
 
         // error messages
         document.getElementById("income").classList.add("border", "border-danger");
@@ -51,12 +52,12 @@ function calculateExpenses() {
     }
 }
 
-//save
+// save
 function calculateSave() {
     // taking user input value
     saveTarget = document.getElementById("save-target-amount").value;
 
-    if (isNaN(saveTarget) || saveTarget < 0) {
+    if (saveTarget.match(letters) || saveTarget < 0) {
 
         // error messages
         document.getElementById("save-target-amount").classList.add("border", "border-danger");
