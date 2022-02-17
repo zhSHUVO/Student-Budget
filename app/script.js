@@ -8,7 +8,6 @@ let saveTarget
 
 let letters = /[A-Za-z]/g;
 
-
 // expenses & remaining calculation
 function calculateExpenses() {
     // taking user input value
@@ -17,6 +16,7 @@ function calculateExpenses() {
     rentCost = document.getElementById("rent").value;
     clothsCost = document.getElementById("cloths").value;
 
+    // input validation for number and negative value
     if (totalIncome.match(letters) || foodCost.match(letters) || rentCost.match(letters) || clothsCost.match(letters) || totalIncome < 0 || foodCost < 0 || rentCost < 0 || clothsCost < 0) {
 
         // error messages
@@ -45,6 +45,11 @@ function calculateExpenses() {
         document.getElementById("cloths").classList.remove("border", "border-danger");
         document.getElementById("expense-validation-check").style.display = "none";
 
+        // over expenses check
+        if (totalExpenses > totalIncome) {
+            document.getElementById("over-expenses-check").style.display = "block";
+        }
+
         // showing the results to the user
         document.getElementById("monthly-balance").innerHTML = totalIncome;
         document.getElementById("total-expenses").innerHTML = totalExpenses;
@@ -57,6 +62,7 @@ function calculateSave() {
     // taking user input value
     saveTarget = document.getElementById("save-target-amount").value;
 
+    // input validation for number and negative value
     if (saveTarget.match(letters) || saveTarget < 0) {
 
         // error messages
@@ -76,6 +82,11 @@ function calculateSave() {
         // removing error messages
         document.getElementById("save-target-amount").classList.remove("border", "border-danger");
         document.getElementById("save-validation-check").style.display = "none";
+
+        // over saving check
+        if (savedAmount > remainingBalance) {
+            document.getElementById("over-save-check").style.display = "block";
+        }
 
         // showing the results to the user
         document.getElementById("saved-amount").innerHTML = savedAmount;

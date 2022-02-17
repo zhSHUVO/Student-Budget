@@ -103,6 +103,12 @@
                 </button>
               </div>
             </form>
+
+            <!-- over expanses checking -->
+            <div id="over-expenses-check" class="text-danger text-center">
+              <small>Your expenses are higher than your monthly income!</small>
+            </div>
+
             <!-- calculated expenses -->
             <div class="py-4 text-center">
               <h5>Monthly Balance: <span id="monthly-balance"> 0 </span></h5>
@@ -138,6 +144,11 @@
                 <small>Invalid values, recheck your input and try again!</small>
               </div>
 
+              <!-- over save message -->
+              <div id="over-save-check" class="text-danger text-center">
+                <small>You don't have enough money to save!</small>
+              </div>
+
               <!-- calculated save -->
               <div class="py-4 text-center">
                 <h5>Saved Amount: <span id="saved-amount"> 0 </span></h5>
@@ -152,7 +163,13 @@
       </div>
     </main>
     <!-- footer -->
-    <footer></footer>
+    <footer class="text-center mx-auto col-sm-8">
+      <p>
+        Too many people spend money they earned..to buy things they don't
+        want..to impress people that they don't like. <br />
+        <span class="fw-bold">--Will Rogers</span>
+      </p>
+    </footer>
     <!-- bootstrap js -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

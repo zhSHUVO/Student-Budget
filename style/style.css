@@ -7,6 +7,7 @@ header {
   color: #eceff4;
 }
 
+/* main section */
 .left-img {
   background-color: #4c566a;
 }
@@ -15,7 +16,12 @@ header {
   background-color: #434c5e;
 }
 
+/* validation display */
 #expense-validation-check {
+  display: none;
+}
+
+#over-expenses-check {
   display: none;
 }
 
@@ -23,6 +29,11 @@ header {
   display: none;
 }
 
+#over-save-check {
+  display: none;
+}
+
+/* button customize */
 .btn-primary {
   background-color: #2e3440;
 }
